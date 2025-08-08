@@ -9,24 +9,85 @@
 <body>
   <div class="container">
     <h1>Buscador de vuelos</h1>
-  <form action="https://aira-mdp.app.n8n.cloud/webhook/webhook-vuelos-aira" method="POST">
+<form action="https://aira-mdp.app.n8n.cloud/webhook/webhook-vuelos-aira" method="POST">
   <label for="from">Aeropuerto de salida:</label>
-  <input type="text" name="from" id="from" required />
+  <select name="from" id="from" required>
+    <optgroup label="🇦🇷 Argentina">
+      <option value="EZE">Buenos Aires (EZE)</option>
+      <option value="AEP">Buenos Aires (AEP)</option>
+      <option value="COR">Córdoba (COR)</option>
+      <option value="MDZ">Mendoza (MDZ)</option>
+      <option value="BRC">Bariloche (BRC)</option>
+    </optgroup>
+    <optgroup label="🌎 América">
+      <option value="SCL">Santiago (SCL)</option>
+      <option value="MVD">Montevideo (MVD)</option>
+      <option value="GRU">São Paulo (GRU)</option>
+      <option value="GIG">Río de Janeiro (GIG)</option>
+      <option value="LIM">Lima (LIM)</option>
+      <option value="BOG">Bogotá (BOG)</option>
+      <option value="MEX">Ciudad de México (MEX)</option>
+      <option value="CUN">Cancún (CUN)</option>
+      <option value="JFK">New York (JFK)</option>
+      <option value="MIA">Miami (MIA)</option>
+      <option value="LAX">Los Ángeles (LAX)</option>
+    </optgroup>
+    <optgroup label="🇪🇺 Europa">
+      <option value="MAD">Madrid (MAD)</option>
+      <option value="BCN">Barcelona (BCN)</option>
+      <option value="CDG">París (CDG)</option>
+      <option value="AMS">Ámsterdam (AMS)</option>
+      <option value="FCO">Roma (FCO)</option>
+      <option value="LHR">Londres (LHR)</option>
+      <option value="DUB">Dublín (DUB)</option>
+      <option value="FRA">Frankfurt (FRA)</option>
+      <option value="ZRH">Zúrich (ZRH)</option>
+      <option value="VIE">Viena (VIE)</option>
+    </optgroup>
+  </select>
 
   <label for="to">Aeropuerto de llegada:</label>
-  <input type="text" name="to" id="to" required />
+  <select name="to" id="to" required>
+    <!-- Podés repetir el mismo bloque de arriba -->
+    <optgroup label="🇪🇺 Europa">
+      <option value="MAD">Madrid (MAD)</option>
+      <option value="BCN">Barcelona (BCN)</option>
+      <option value="CDG">París (CDG)</option>
+      <option value="AMS">Ámsterdam (AMS)</option>
+      <option value="FCO">Roma (FCO)</option>
+      <option value="LHR">Londres (LHR)</option>
+      <option value="DUB">Dublín (DUB)</option>
+      <option value="FRA">Frankfurt (FRA)</option>
+      <option value="ZRH">Zúrich (ZRH)</option>
+      <option value="VIE">Viena (VIE)</option>
+    </optgroup>
+    <optgroup label="🌎 América">
+      <option value="EZE">Buenos Aires (EZE)</option>
+      <option value="AEP">Buenos Aires (AEP)</option>
+      <option value="COR">Córdoba (COR)</option>
+      <option value="MDZ">Mendoza (MDZ)</option>
+      <option value="BRC">Bariloche (BRC)</option>
+      <option value="SCL">Santiago (SCL)</option>
+      <option value="MVD">Montevideo (MVD)</option>
+      <option value="GRU">São Paulo (GRU)</option>
+      <option value="GIG">Río de Janeiro (GIG)</option>
+      <option value="LIM">Lima (LIM)</option>
+      <option value="MEX">Ciudad de México (MEX)</option>
+      <option value="CUN">Cancún (CUN)</option>
+      <option value="JFK">New York (JFK)</option>
+      <option value="MIA">Miami (MIA)</option>
+      <option value="LAX">Los Ángeles (LAX)</option>
+    </optgroup>
+  </select>
 
-  <label for="date_from">Fecha de salida:</label>
-  <input type="date" name="date_from" id="date_from" required />
-
-  <label for="date_to">Fecha de regreso:</label>
-  <input type="date" name="date_to" id="date_to" required />
-
-  <label for="passengers">Pasajeros:</label>
-  <input type="number" name="passengers" id="passengers" min="1" value="1" required />
+  <!-- Fechas y pasajeros ya no se piden; los seteamos por backend -->
+  <input type="hidden" name="passengers" value="1" />
+  <input type="hidden" name="date_from" value="" />
+  <input type="hidden" name="date_to" value="" />
 
   <button type="submit">Guardar búsqueda</button>
-  </form>
+</form>
+
   </div>
 </body>
 </html>
